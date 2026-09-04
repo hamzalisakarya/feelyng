@@ -107,12 +107,14 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 .contact-box { display: flex; align-items: center; justify-content: space-between; gap: 3rem; padding: clamp(2.5rem, 6vw, 4.5rem); color: white; background: var(--color-primary-dark); border-radius: var(--radius-large); box-shadow: var(--shadow-large); }
 .contact-box .eyebrow { color: var(--color-accent); }
 .contact-box h2 { max-width: 47rem; }
-.contact-box p:last-child { max-width: 43rem; margin-bottom: 0; color: #d7e7e2; }
+.contact-box div > p:last-of-type { max-width: 43rem; margin-bottom: 0; color: #d7e7e2; }
+.contact-email { display: inline-block; margin-top: 0.85rem; color: white; font-size: 1.08rem; font-weight: 750; text-underline-offset: 0.25em; }
 .contact-box .button { flex: none; }
 
 .site-footer { padding-top: 3.5rem; background: white; border-top: 1px solid var(--color-border); }
 .footer-main { display: flex; justify-content: space-between; gap: 2rem; padding-bottom: 2.5rem; }
 .footer-main p { margin: 0.6rem 0 0; color: var(--color-muted); }
+.footer-email { display: inline-block; margin-top: 0.4rem; color: var(--color-primary-dark); font-weight: 700; text-underline-offset: 0.25em; }
 .footer-main nav { display: flex; align-items: flex-start; gap: 1.5rem; }
 .footer-main nav a { color: var(--color-muted); text-underline-offset: 0.25em; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; color: var(--color-muted); border-top: 1px solid var(--color-border); font-size: 0.82rem; }

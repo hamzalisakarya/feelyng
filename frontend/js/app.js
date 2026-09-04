@@ -10,14 +10,15 @@ const translations = {
         navProcess: "So funktioniert’s",
         navAbout: "Warum Feelyng",
         navTransparency: "Hinweise",
-        whatsAppShort: "WhatsApp",
+        contactShort: "Kontakt",
         heroEyebrow: "Orientierung, die sich einfach anfühlt",
         headline: "Strom, Gas & Internet einfacher angehen.",
         supportLanguages: "Persönliche Unterstützung auf Deutsch und Türkisch.",
         heroCopy: "Feelyng unterstützt dich dabei, Tarife, Anbieterwechsel und die nächsten Schritte besser zu verstehen – persönlich, klar und ohne unnötige Komplexität.",
-        whatsAppButton: "Über WhatsApp schreiben",
+        contactButton: "Kontakt aufnehmen",
+        emailButton: "E-Mail senden",
         learnMore: "So läuft es ab",
-        whatsAppNote: "Unverbindlich Kontakt aufnehmen",
+        contactNote: "Unverbindlich per E-Mail Kontakt aufnehmen",
         servicesEyebrow: "Unsere Themen",
         servicesTitle: "Unterstützung für wichtige Alltagsentscheidungen",
         servicesIntro: "Wir helfen dir, Informationen einzuordnen und den jeweiligen Prozess besser zu überblicken.",
@@ -51,10 +52,9 @@ const translations = {
         transparencyText: "Feelyng ist kein Energie- oder Internetanbieter. Ein Vertrag kommt – sofern du dich dafür entscheidest – direkt mit dem jeweiligen Anbieter oder Partner zustande. Für erfolgreiche Vermittlungen kann Feelyng eine Vergütung erhalten; für dich steht die freie Entscheidung im Mittelpunkt.",
         ctaEyebrow: "Einfach ins Gespräch kommen",
         ctaTitle: "Du hast Fragen zu deinem Tarif oder einem Wechsel?",
-        ctaText: "Schreib uns über WhatsApp. Wir schauen gemeinsam, welche nächsten Schritte für dich sinnvoll sind.",
+        ctaText: "Schreib uns eine E-Mail. Wir schauen gemeinsam, welche nächsten Schritte für dich sinnvoll sind.",
         footerClaim: "Persönliche Unterstützung auf Deutsch und Türkisch.",
-        footerLocation: "Für Kundinnen und Kunden in Deutschland",
-        whatsappUnavailable: "WhatsApp ist bald verfügbar."
+        footerLocation: "Für Kundinnen und Kunden in Deutschland"
     },
     tr: {
         pageTitle: "Feelyng – Elektrik, Doğal Gaz ve İnternet",
@@ -67,14 +67,15 @@ const translations = {
         navProcess: "Nasıl çalışır?",
         navAbout: "Neden Feelyng",
         navTransparency: "Açıklamalar",
-        whatsAppShort: "WhatsApp",
+        contactShort: "İletişim",
         heroEyebrow: "Süreci kolaylaştıran destek",
         headline: "Elektrik, doğal gaz ve internet işlemlerini daha kolay ele alın.",
         supportLanguages: "Almanca ve Türkçe kişisel destek.",
         heroCopy: "Feelyng; tarifeleri, sağlayıcı değişikliğini ve sonraki adımları daha iyi anlamanıza kişisel, açık ve sade bir şekilde destek olur.",
-        whatsAppButton: "WhatsApp’tan yazın",
+        contactButton: "İletişime geç",
+        emailButton: "E-posta gönder",
         learnMore: "Süreç nasıl ilerliyor?",
-        whatsAppNote: "Bağlayıcı olmayan ilk iletişim",
+        contactNote: "E-posta ile bağlayıcı olmayan ilk iletişim",
         servicesEyebrow: "Hizmet alanlarımız",
         servicesTitle: "Günlük hayattaki önemli kararlar için destek",
         servicesIntro: "Bilgileri anlamanıza ve ilgili süreci daha net görmenize yardımcı oluyoruz.",
@@ -108,17 +109,15 @@ const translations = {
         transparencyText: "Feelyng bir enerji veya internet sağlayıcısı değildir. Tercih etmeniz halinde sözleşme doğrudan ilgili sağlayıcı veya iş ortağıyla yapılır. Başarılı yönlendirmeler için Feelyng ücret alabilir; seçim özgürlüğü her zaman size aittir.",
         ctaEyebrow: "Kolayca iletişime geçin",
         ctaTitle: "Tarifeniz veya sağlayıcı değişikliği hakkında sorunuz mu var?",
-        ctaText: "Bize WhatsApp üzerinden yazın. Sizin için uygun olabilecek sonraki adımları birlikte değerlendirelim.",
+        ctaText: "Bize e-posta gönderin. Sizin için uygun olabilecek sonraki adımları birlikte değerlendirelim.",
         footerClaim: "Almanca ve Türkçe kişisel destek.",
-        footerLocation: "Almanya’daki müşteriler için",
-        whatsappUnavailable: "WhatsApp yakında kullanıma açılacak."
+        footerLocation: "Almanya’daki müşteriler için"
     }
 };
 
 const storageKey = "feelyng-language";
 
-// TODO: WhatsApp Business Nummer eintragen
-const whatsAppBusinessNumber = "";
+// TODO: WhatsApp Business Nummer eintragen und WhatsApp CTA wieder aktivieren.
 
 let currentLanguage = "de";
 const menuToggle = document.querySelector(".menu-toggle");
@@ -189,17 +188,6 @@ document.querySelectorAll("[data-language]").forEach((button) => {
 
 document.querySelectorAll("[data-current-year]").forEach((element) => {
     element.textContent = new Date().getFullYear();
-});
-
-document.querySelectorAll("[data-whatsapp]").forEach((button) => {
-    button.addEventListener("click", () => {
-        if (!whatsAppBusinessNumber) {
-            window.alert(translations[currentLanguage].whatsappUnavailable);
-            return;
-        }
-
-        window.open(`https://wa.me/${whatsAppBusinessNumber}`, "_blank", "noopener,noreferrer");
-    });
 });
 
 let savedLanguage = "de";
