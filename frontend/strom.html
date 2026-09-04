@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="assets/images/feelyng-icon.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
+    <script src="js/journeys.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content" data-i18n="skipLink">Zum Inhalt springen</a>
@@ -51,8 +52,11 @@
                         <p class="estimated-badge" id="consumption-status" hidden data-i18n="estimatedBadge">geschätzt</p>
                         <p class="field-error" id="consumption-error" data-i18n="consumptionError">Bitte geben Sie einen plausiblen Jahresverbrauch ein.</p>
                     </div>
+                    <div class="field"><label for="current-payment" data-de="Aktueller monatlicher Abschlag" data-tr="Güncel aylık ödeme">Aktueller monatlicher Abschlag</label><div class="input-unit"><input id="current-payment" name="currentPayment" type="number" inputmode="decimal" min="0" step="0.01" placeholder="z. B. 145"><span data-de="EUR / Monat" data-tr="EUR / ay">EUR / Monat</span></div></div>
+                    <div class="field"><label for="customer-email" data-de="E-Mail-Adresse" data-tr="E-posta adresi">E-Mail-Adresse</label><input id="customer-email" name="customerEmail" type="email" autocomplete="email" required><p class="field-help" data-de="An diese Adresse können wir Ihnen nach der Tarifprüfung antworten." data-tr="Tarife kontrolünden sonra size bu e-posta adresi üzerinden dönüş yapabiliriz.">An diese Adresse können wir Ihnen nach der Tarifprüfung antworten.</p></div>
                     <button class="estimator-toggle" type="button" aria-expanded="false" aria-controls="estimator" data-estimator-toggle data-i18n="estimateToggle">Verbrauch nicht bekannt? Jetzt schätzen</button>
                     <button class="button button-primary form-submit" type="submit" data-i18n="requestTariff">Tarifprüfung anfragen</button>
+                    <p class="mailto-note" data-de="Beim Klick auf die Schaltfläche öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht." data-tr="Butona bastığınızda e-posta uygulamanız, bilgilerinizin yer aldığı hazırlanmış bir mesajla açılır.">Beim Klick auf die Schaltfläche öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht.</p>
                 </form>
             </div>
         </section>

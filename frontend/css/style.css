@@ -185,6 +185,25 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 .privacy-box { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; padding: clamp(2rem, 5vw, 3.5rem); background: white; border: 1px solid var(--color-border); border-radius: var(--radius-large); box-shadow: var(--shadow-small); }
 .privacy-box h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; }
 .privacy-box p { color: var(--color-muted); }
+.mailto-note { margin: 0.75rem 0 0; color: var(--color-muted); font-size: 0.82rem; text-align: center; }
+.compact-fieldset { margin: 1.2rem 0 0; padding: 0; border: 0; }
+.compact-fieldset legend { margin-bottom: 0.55rem; padding: 0; font-weight: 750; }
+.compact-fieldset .field { margin-top: 0.85rem; }
+.speed-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.conditional-field { padding: 0.9rem; background: var(--color-soft); border-radius: var(--radius-small); }
+.cost-orientation { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-top: 1rem; padding: 1rem; background: var(--color-soft); border-radius: var(--radius-small); }
+.cost-orientation div { display: flex; flex-direction: column; }
+.cost-orientation span { color: var(--color-muted); font-size: 0.78rem; }
+.cost-orientation strong { color: var(--color-primary-dark); font-size: 1.05rem; }
+.cost-orientation p { grid-column: 1 / -1; margin: 0; color: var(--color-muted); font-size: 0.78rem; }
+.summary-card { padding: clamp(1.5rem, 5vw, 3rem); background: white; border: 1px solid var(--color-border); border-radius: var(--radius-large); box-shadow: var(--shadow-large); }
+.summary-card h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); }
+.summary-card dl { display: grid; grid-template-columns: minmax(10rem, 0.7fr) 1fr; margin: 2rem 0; border-top: 1px solid var(--color-border); }
+.summary-card dt, .summary-card dd { margin: 0; padding: 0.7rem 0; border-bottom: 1px solid var(--color-border); }
+.summary-card dt { color: var(--color-muted); }
+.summary-card dd { font-weight: 750; }
+.summary-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.button-secondary { color: var(--color-primary-dark); background: var(--color-soft); border-color: var(--color-border); }
 
 @media (max-width: 64rem) {
     .menu-toggle { display: block; }
@@ -205,6 +224,7 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
     .contact-box { align-items: flex-start; flex-direction: column; }
     .footer-main { align-items: flex-start; flex-direction: column; }
     .choice-grid-six { grid-template-columns: repeat(3, 1fr); }
+    .speed-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 35rem) {
@@ -225,6 +245,10 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
     .choice-grid-six { grid-template-columns: repeat(3, 1fr); }
     .yes-no { grid-template-columns: repeat(2, 1fr); }
     .privacy-box { grid-template-columns: 1fr; }
+    .cost-orientation, .summary-card dl { grid-template-columns: 1fr; }
+    .cost-orientation p { grid-column: auto; }
+    .summary-card dd { padding-top: 0; }
+    .summary-actions .button { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

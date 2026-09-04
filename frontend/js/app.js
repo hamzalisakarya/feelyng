@@ -72,11 +72,11 @@ const translations = {
         estimatorRequired: "Bitte beantworten Sie alle Fragen.", calculateEstimate: "Verbrauch schätzen", estimateResultLabel: "Geschätzter Jahresverbrauch",
         estimateDisclaimer: "Dies ist eine unverbindliche Schätzung. Den zuverlässigsten Wert finden Sie auf Ihrer letzten Jahresabrechnung.", applyEstimate: "Schätzwert übernehmen",
         heatingWarningTitle: "Keine pauschale Schätzung möglich", heatingWarning: "Bei elektrischer Raumheizung kann der Stromverbrauch stark von Wohnfläche, Dämmung und Heizsystem abhängen. Bitte verwenden Sie nach Möglichkeit den Jahresverbrauch aus Ihrer letzten Stromabrechnung.",
-        nextEyebrow: "Transparent und einfach", nextHeading: "So geht es weiter", nextOneTitle: "PLZ & Verbrauch", nextOneText: "Für die erste Prüfung brauchen wir nur diese beiden Angaben.",
-        nextTwoTitle: "Tarife prüfen", nextTwoText: "Wir prüfen verfügbare Tarifmöglichkeiten und melden uns anschließend bei Ihnen.", nextThreeTitle: "Sie entscheiden", nextThreeText: "Wir teilen Ihnen mögliche Optionen mit. Sie entscheiden, ob Sie weitermachen möchten.",
-        nextFourTitle: "Vertrag", nextFourText: "Erst wenn Sie sich für einen Tarif entscheiden, werden weitere für den Vertragsabschluss erforderliche Angaben benötigt.",
+        nextEyebrow: "Transparent und einfach", nextHeading: "So geht es weiter", nextOneTitle: "Angaben senden", nextOneText: "Für die erste Prüfung senden Sie nur die grundlegenden Tarifangaben.",
+        nextTwoTitle: "Feelyng prüft die Möglichkeiten", nextTwoText: "Wir prüfen verfügbare Tarifmöglichkeiten.", nextThreeTitle: "Wir melden uns mit möglichen Optionen", nextThreeText: "Sie erhalten eine Rückmeldung an Ihre E-Mail-Adresse.",
+        nextFourTitle: "Sie entscheiden, ob Sie weitermachen möchten", nextFourText: "Weitere Vertragsdaten werden erst benötigt, wenn Sie sich für das Fortfahren entscheiden.",
         partnerProcess: "Je nach Anbieter und Partnerprozess können Sie den Abschluss selbst durchführen oder Unterstützung beim weiteren Ablauf erhalten.",
-        privacyEyebrow: "Ihre Daten", privacyHeading: "Erst prüfen, dann Daten", privacyText: "Für die erste Tarifprüfung brauchen wir weder Ihre IBAN noch Ihr Geburtsdatum. Sensible Angaben werden erst relevant, wenn Sie sich tatsächlich für einen Vertragsabschluss entscheiden.",
+        privacyEyebrow: "Ihre Daten", privacyHeading: "Erst prüfen, dann Daten", privacyText: "Für die erste Tarifprüfung benötigen wir keine IBAN und kein Geburtsdatum. Weitere Angaben werden erst benötigt, wenn Sie sich für einen Vertragsabschluss entscheiden.",
         privacyLink: "Zur Datenschutzerklärung"
     },
     tr: {
@@ -152,11 +152,11 @@ const translations = {
         estimatorRequired: "Lütfen tüm soruları yanıtlayın.", calculateEstimate: "Tüketimi tahmin et", estimateResultLabel: "Tahmini yıllık tüketim",
         estimateDisclaimer: "Bu yaklaşık bir tahmindir. En güvenilir tüketim değerini son yıllık elektrik faturanızda bulabilirsiniz.", applyEstimate: "Tahmini değeri kullan",
         heatingWarningTitle: "Standart tahmin yapılamıyor", heatingWarning: "Elektrikli ev ısıtmasında tüketim; evin büyüklüğüne, yalıtımına ve ısıtma sistemine göre çok değişebilir. Mümkünse son elektrik faturanızdaki yıllık tüketim değerini kullanın.",
-        nextEyebrow: "Şeffaf ve kolay", nextHeading: "Sonrasında ne oluyor?", nextOneTitle: "Posta kodu & tüketim", nextOneText: "İlk kontrol için yalnızca bu iki bilgi yeterlidir.",
-        nextTwoTitle: "Tarifeleri kontrol ediyoruz", nextTwoText: "Mevcut tarife seçeneklerini kontrol edip size geri dönüş yapıyoruz.", nextThreeTitle: "Siz karar veriyorsunuz", nextThreeText: "Uygun seçenekleri size iletiyoruz. Devam edip etmeyeceğinize siz karar veriyorsunuz.",
-        nextFourTitle: "Sözleşme", nextFourText: "Bir tarifeyle devam etmeye karar verdiğinizde sözleşme için gerekli diğer bilgiler istenir.",
+        nextEyebrow: "Şeffaf ve kolay", nextHeading: "Sonrasında ne oluyor?", nextOneTitle: "Bilgileri gönder", nextOneText: "İlk kontrol için yalnızca temel tarife bilgilerini gönderirsiniz.",
+        nextTwoTitle: "Feelyng seçenekleri kontrol eder", nextTwoText: "Mevcut tarife seçeneklerini kontrol ederiz.", nextThreeTitle: "Size uygun seçeneklerle geri dönüş yaparız", nextThreeText: "E-posta adresinize geri dönüş yaparız.",
+        nextFourTitle: "Devam edip etmeyeceğinize siz karar verirsiniz", nextFourText: "Diğer sözleşme bilgileri ancak devam etmeye karar verdiğinizde istenir.",
         partnerProcess: "Sağlayıcı ve partner sürecine göre sözleşmeyi kendiniz tamamlayabilir veya sonraki adımlarda destek alabilirsiniz.",
-        privacyEyebrow: "Bilgileriniz", privacyHeading: "Önce tarife kontrolü, sonra gerekli bilgiler", privacyText: "İlk tarife kontrolü için IBAN veya doğum tarihinize ihtiyacımız yok. Hassas bilgiler ancak gerçekten bir sözleşmeyle devam etmeye karar verdiğinizde gerekli olur.",
+        privacyEyebrow: "Bilgileriniz", privacyHeading: "Önce tarife kontrolü, sonra gerekli bilgiler", privacyText: "İlk tarife kontrolü için IBAN veya doğum tarihinize ihtiyacımız yok. Diğer bilgiler ancak bir sözleşmeyle devam etmeye karar verdiğinizde gerekli olur.",
         privacyLink: "Gizlilik bildirimine git"
     }
 };
@@ -225,6 +225,7 @@ function setLanguage(language) {
 
     updateMenuLabel(menuToggle?.getAttribute("aria-expanded") === "true");
     if (latestEstimate) renderConsumptionEstimate(latestEstimate);
+    document.dispatchEvent(new CustomEvent("feelyng:languagechange", { detail: { language: currentLanguage } }));
 }
 
 menuToggle?.addEventListener("click", () => {
@@ -367,21 +368,26 @@ tariffForm?.addEventListener("submit", (event) => {
     const postalCode = document.querySelector("#postal-code");
     const postalError = document.querySelector("#postal-code-error");
     const consumptionError = document.querySelector("#consumption-error");
+    const customerEmail = document.querySelector("#customer-email");
     const postalValid = /^[0-9]{5}$/.test(postalCode.value);
     const consumption = Number(consumptionInput.value);
     const consumptionValid = Number.isFinite(consumption) && consumption >= 100 && consumption <= 100000;
 
     setFieldValidity(postalCode, postalError, postalValid);
     setFieldValidity(consumptionInput, consumptionError, consumptionValid);
-    if (!postalValid || !consumptionValid) return;
+    if (!postalValid || !consumptionValid || !customerEmail?.checkValidity()) {
+        customerEmail?.reportValidity();
+        return;
+    }
 
     const formattedConsumption = formatConsumption(roundConsumption(consumption));
+    const currentPayment = document.querySelector("#current-payment")?.value;
     const subject = currentLanguage === "tr"
         ? "Elektrik tarifesi kontrol talebi"
         : "Anfrage zur Stromtarifprüfung";
     const body = currentLanguage === "tr"
-        ? `Merhaba Feelyng,\n\nelektrik tarifemi kontrol ettirmek istiyorum.\n\nPosta kodu: ${postalCode.value}\nYıllık tüketim: ${consumptionIsEstimated ? "yaklaşık " : ""}${formattedConsumption} kWh\nTüketim değeri: ${consumptionIsEstimated ? "tahmini" : "kullanıcı tarafından girildi"}\n\nBenimle iletişime geçebilir misiniz?`
-        : `Hallo Feelyng,\n\nich möchte meinen Stromtarif prüfen lassen.\n\nPLZ: ${postalCode.value}\nJahresverbrauch: ${consumptionIsEstimated ? "ca. " : ""}${formattedConsumption} kWh\nVerbrauchswert: ${consumptionIsEstimated ? "geschätzt" : "vom Kunden angegeben"}\n\nBitte melden Sie sich bei mir.`;
+        ? `Merhaba Feelyng,\n\nelektrik tarifemi kontrol ettirmek istiyorum.\n\nE-posta: ${customerEmail.value}\nPosta kodu: ${postalCode.value}\nYıllık tüketim: ${consumptionIsEstimated ? "yaklaşık " : ""}${formattedConsumption} kWh\nTüketim değeri: ${consumptionIsEstimated ? "tahmini" : "kullanıcı tarafından girildi"}${currentPayment ? `\nGüncel aylık ödeme: ${currentPayment} EUR/ay` : ""}\n\nBenimle iletişime geçebilir misiniz?`
+        : `Hallo Feelyng,\n\nich möchte meinen Stromtarif prüfen lassen.\n\nE-Mail: ${customerEmail.value}\nPLZ: ${postalCode.value}\nJahresverbrauch: ${consumptionIsEstimated ? "ca. " : ""}${formattedConsumption} kWh\nVerbrauchswert: ${consumptionIsEstimated ? "geschätzt" : "vom Kunden angegeben"}${currentPayment ? `\nAktueller Abschlag: ${currentPayment} EUR/Monat` : ""}\n\nBitte melden Sie sich bei mir.`;
 
     window.location.href = `mailto:info@feelyng.de?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
