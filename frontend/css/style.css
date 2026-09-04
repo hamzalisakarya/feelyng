@@ -90,6 +90,7 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 .card-number { display: grid; width: 2.75rem; height: 2.75rem; place-items: center; color: var(--color-primary-dark); background: var(--color-soft); border-radius: 0.85rem; font-size: 0.75rem; font-weight: 850; }
 .service-card h3 { margin: 2.6rem 0 0.6rem; font-size: 1.25rem; }
 .service-card p { margin: 0; color: var(--color-muted); font-size: 0.94rem; }
+.service-card .service-note { margin-top: 0.8rem; color: var(--color-primary-dark); font-size: 0.82rem; font-weight: 700; }
 .service-card-linked { padding: 0; }
 .service-card-linked > a { min-height: 18rem; display: block; padding: 1.6rem; color: inherit; text-decoration: none; }
 .card-link-label { display: inline-block; margin-top: 1.5rem; color: var(--color-primary); font-size: 0.88rem; font-weight: 800; }
@@ -185,6 +186,11 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 .privacy-box { display: grid; grid-template-columns: auto 1fr; gap: 1.5rem; padding: clamp(2rem, 5vw, 3.5rem); background: white; border: 1px solid var(--color-border); border-radius: var(--radius-large); box-shadow: var(--shadow-small); }
 .privacy-box h2 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.04em; }
 .privacy-box p { color: var(--color-muted); }
+.support-list { display: grid; gap: 0.85rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.support-list li { position: relative; padding-left: 1.8rem; color: var(--color-muted); }
+.support-list li::before { content: "✓"; position: absolute; left: 0; color: var(--color-primary); font-weight: 800; }
+.decision-box { border-left: 5px solid var(--color-accent); }
+.decision-box h2 { max-width: 48rem; }
 .mailto-note { margin: 0.75rem 0 0; color: var(--color-muted); font-size: 0.82rem; text-align: center; }
 .compact-fieldset { margin: 1.2rem 0 0; padding: 0; border: 0; }
 .compact-fieldset legend { margin-bottom: 0.55rem; padding: 0; font-weight: 750; }

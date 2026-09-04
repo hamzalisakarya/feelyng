@@ -232,4 +232,22 @@ document.querySelector("[data-send-internet]")?.addEventListener("click", () => 
     window.location.href = buildMailto(subject, body);
 });
 
+const kfzSupportForm = document.querySelector("#kfz-support-form");
+
+kfzSupportForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!kfzSupportForm.reportValidity()) return;
+
+    const email = new FormData(kfzSupportForm).get("email");
+    const tr = journeyLanguage() === "tr";
+    const subject = tr
+        ? "Araç sigortası teknik destek talebi"
+        : "Anfrage zur technischen Unterstützung bei Kfz-Versicherung";
+    const body = tr
+        ? `Merhaba Feelyng,\n\naraç sigortası karşılaştırması için bağlantıya veya teknik desteğe ihtiyacım var.\n\nE-posta: ${email}\n\nBenimle iletişime geçebilir misiniz?`
+        : `Hallo Feelyng,\n\nich benötige einen Link bzw. technische Unterstützung bei einem Kfz-Versicherungsvergleich.\n\nE-Mail: ${email}\n\nBitte melden Sie sich bei mir.`;
+
+    window.location.href = buildMailto(subject, body);
+});
+
 updateJourneyCopy();
