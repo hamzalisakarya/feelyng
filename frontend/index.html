@@ -4,46 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pageTitle">Feelyng – Strom, Gas &amp; Internet</title>
+    <meta name="description" content="Persönliche Unterstützung bei Strom, Gas und Internet auf Deutsch und Türkisch.">
+    <link rel="canonical" href="https://feelyng.de/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="Feelyng">
+    <meta property="og:title" content="Feelyng – Strom, Gas &amp; Internet">
+    <meta property="og:description" content="Persönliche Unterstützung bei Strom, Gas und Internet auf Deutsch und Türkisch.">
+    <meta property="og:url" content="https://feelyng.de/">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/app.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav aria-label="Sprachauswahl" data-i18n-aria-label="languageNavigation">
-            <button type="button" data-language="de" aria-pressed="true">DE</button>
-            <button type="button" data-language="tr" aria-pressed="false">TR</button>
-        </nav>
+    <a class="skip-link" href="#main-content" data-i18n="skipLink">Zum Inhalt springen</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#top" aria-label="Feelyng Startseite">Feelyng<span>.</span></a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">
+                <span class="sr-only" data-i18n="menuLabel">Menü öffnen</span>
+                <span></span><span></span><span></span>
+            </button>
+            <div class="header-panel" id="main-navigation">
+                <nav class="main-nav" aria-label="Hauptnavigation" data-i18n-aria-label="mainNavigation">
+                    <a href="#services" data-i18n="navServices">Leistungen</a>
+                    <a href="#process" data-i18n="navProcess">So funktioniert’s</a>
+                    <a href="#about" data-i18n="navAbout">Warum Feelyng</a>
+                    <a href="#transparency" data-i18n="navTransparency">Hinweise</a>
+                </nav>
+                <div class="language-switcher" aria-label="Sprachauswahl" data-i18n-aria-label="languageNavigation">
+                    <button type="button" data-language="de" aria-pressed="true">DE</button>
+                    <span aria-hidden="true">/</span>
+                    <button type="button" data-language="tr" aria-pressed="false">TR</button>
+                </div>
+                <button class="button button-small button-primary" type="button" data-whatsapp data-i18n="whatsAppShort">WhatsApp</button>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <h1>Feelyng</h1>
+    <main id="main-content">
+        <section class="hero" id="top">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <p class="eyebrow" data-i18n="heroEyebrow">Orientierung, die sich einfach anfühlt</p>
+                    <h1 data-i18n="headline">Strom, Gas &amp; Internet einfacher angehen.</h1>
+                    <p class="hero-lead" data-i18n="supportLanguages">Persönliche Unterstützung auf Deutsch und Türkisch.</p>
+                    <p class="hero-copy" data-i18n="heroCopy">Feelyng unterstützt dich dabei, Tarife, Anbieterwechsel und die nächsten Schritte besser zu verstehen – persönlich, klar und ohne unnötige Komplexität.</p>
+                    <div class="hero-actions">
+                        <button class="button button-primary" type="button" data-whatsapp data-i18n="whatsAppButton">Über WhatsApp schreiben</button>
+                        <a class="text-link" href="#process" data-i18n="learnMore">So läuft es ab</a>
+                    </div>
+                    <p class="helper-text" data-i18n="whatsAppNote">Unverbindlich Kontakt aufnehmen</p>
+                </div>
+                <div class="hero-card" aria-hidden="true">
+                    <div class="hero-card-top"><span>Feelyng</span><span class="status-dot"></span></div>
+                    <div class="hero-card-body"><div class="signal signal-large"></div><div class="signal"></div><div class="signal signal-short"></div></div>
+                    <div class="hero-card-bottom"><span>DE</span><span>TR</span><span>✓</span></div>
+                </div>
+            </div>
+        </section>
 
-        <h2 data-i18n="headline">Strom, Gas &amp; Internet einfach vergleichen</h2>
+        <section class="section" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="servicesEyebrow">Unsere Themen</p>
+                    <h2 data-i18n="servicesTitle">Unterstützung für wichtige Alltagsentscheidungen</h2>
+                    <p data-i18n="servicesIntro">Wir helfen dir, Informationen einzuordnen und den jeweiligen Prozess besser zu überblicken.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="service-card"><span class="card-number">01</span><h3 data-i18n="electricityTitle">Strom</h3><p data-i18n="electricityText">Unterstützung bei der Orientierung rund um Stromtarife und Anbieterwechsel.</p></article>
+                    <article class="service-card"><span class="card-number">02</span><h3 data-i18n="gasTitle">Gas</h3><p data-i18n="gasText">Unterstützung bei Fragen zu Gastarifen und Wechselmöglichkeiten.</p></article>
+                    <article class="service-card"><span class="card-number">03</span><h3 data-i18n="internetTitle">Internet</h3><p data-i18n="internetText">Unterstützung bei der Orientierung rund um DSL-, Kabel- und Glasfaserangebote.</p></article>
+                    <article class="service-card"><span class="card-number">04</span><h3 data-i18n="carTitle">Kfz-Versicherung</h3><p data-i18n="carText">Technische Unterstützung bei der Nutzung von Vergleichsmöglichkeiten. Die Produktauswahl und die endgültige Entscheidung erfolgt durch den Kunden selbst.</p></article>
+                </div>
+            </div>
+        </section>
 
-        <p data-i18n="supportLanguages">
-            Persönliche Unterstützung auf Deutsch und Türkisch.
-        </p>
+        <section class="section section-soft" id="process">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="processEyebrow">Klar und unkompliziert</p>
+                    <h2 data-i18n="processTitle">So funktioniert’s</h2>
+                </div>
+                <ol class="steps">
+                    <li><span class="step-number">01</span><h3 data-i18n="stepOne">Kontakt aufnehmen</h3><p data-i18n="stepOneText">Schreib uns kurz, wobei du Unterstützung suchst.</p></li>
+                    <li><span class="step-number">02</span><h3 data-i18n="stepTwo">Bedarf mitteilen</h3><p data-i18n="stepTwoText">Wir klären gemeinsam deine Situation und deine Fragen.</p></li>
+                    <li><span class="step-number">03</span><h3 data-i18n="stepThree">Möglichkeiten prüfen</h3><p data-i18n="stepThreeText">Passende Möglichkeiten werden übersichtlich betrachtet.</p></li>
+                    <li><span class="step-number">04</span><h3 data-i18n="stepFour">Nächste Schritte klären</h3><p data-i18n="stepFourText">Du entscheidest, wie es anschließend weitergeht.</p></li>
+                </ol>
+            </div>
+        </section>
 
-        <p data-i18n="supportDescription">
-            Wir helfen dir bei Fragen rund um Strom, Gas und Internet
-            und begleiten dich beim Tarifwechsel.
-        </p>
+        <section class="section" id="about">
+            <div class="container split-layout">
+                <div class="section-heading">
+                    <p class="eyebrow" data-i18n="benefitsEyebrow">Persönlich und verständlich</p>
+                    <h2 data-i18n="benefitsTitle">Warum Feelyng?</h2>
+                    <p data-i18n="benefitsIntro">Ein direkter Ansprechpartner für Menschen, die ihre Möglichkeiten ohne komplizierte Umwege verstehen möchten.</p>
+                </div>
+                <ul class="benefit-list">
+                    <li><span>DE / TR</span><strong data-i18n="benefitOne">Deutsch &amp; Türkisch</strong></li>
+                    <li><span>01:01</span><strong data-i18n="benefitTwo">Persönliche Unterstützung</strong></li>
+                    <li><span>✓</span><strong data-i18n="benefitThree">Einfache Kommunikation</strong></li>
+                    <li><span>3×</span><strong data-i18n="benefitFour">Strom, Gas und Internet an einem Ort</strong></li>
+                </ul>
+            </div>
+        </section>
 
-        <!-- TODO: Eine echte WhatsApp-Nummer erst ergänzen, wenn sie feststeht. -->
-        <button type="button" disabled aria-disabled="true" data-i18n="whatsAppButton">
-            WhatsApp kontaktieren
-        </button>
+        <section class="section transparency-section" id="transparency">
+            <div class="container transparency-box">
+                <div class="transparency-icon" aria-hidden="true">i</div>
+                <div>
+                    <p class="eyebrow" data-i18n="transparencyEyebrow">Transparent erklärt</p>
+                    <h2 data-i18n="transparencyTitle">Du behältst die Entscheidung</h2>
+                    <p data-i18n="transparencyText">Feelyng ist kein Energie- oder Internetanbieter. Ein Vertrag kommt – sofern du dich dafür entscheidest – direkt mit dem jeweiligen Anbieter oder Partner zustande. Für erfolgreiche Vermittlungen kann Feelyng eine Vergütung erhalten; für dich steht die freie Entscheidung im Mittelpunkt.</p>
+                </div>
+            </div>
+        </section>
 
-        <!--
-          TODO Kfz-Versicherung: Falls dieser Bereich später ergänzt wird, klarstellen,
-          dass Feelyng weder Versicherungsberater noch Versicherungsmakler ist und dass
-          Nutzerinnen und Nutzer Produktauswahl und endgültige Entscheidung selbst treffen.
-        -->
+        <section class="section contact-section" id="contact">
+            <div class="container contact-box">
+                <div>
+                    <p class="eyebrow" data-i18n="ctaEyebrow">Einfach ins Gespräch kommen</p>
+                    <h2 data-i18n="ctaTitle">Du hast Fragen zu deinem Tarif oder einem Wechsel?</h2>
+                    <p data-i18n="ctaText">Schreib uns über WhatsApp. Wir schauen gemeinsam, welche nächsten Schritte für dich sinnvoll sind.</p>
+                </div>
+                <button class="button button-light" type="button" data-whatsapp data-i18n="whatsAppButton">Über WhatsApp schreiben</button>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <a href="impressum.html" data-i18n="imprintLink">Impressum</a>
-        <a href="datenschutz.html" data-i18n="privacyLink">Datenschutz</a>
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div><a class="brand" href="#top">Feelyng<span>.</span></a><p data-i18n="footerClaim">Persönliche Unterstützung auf Deutsch und Türkisch.</p></div>
+            <nav aria-label="Rechtliche Hinweise" data-i18n-aria-label="legalNavigation"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
+        </div>
+        <div class="container footer-bottom"><p>© <span data-current-year></span> Feelyng</p><p data-i18n="footerLocation">Für Kundinnen und Kunden in Deutschland</p></div>
     </footer>
 </body>
 </html>
