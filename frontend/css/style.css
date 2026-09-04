@@ -34,6 +34,8 @@ h1, h2, h3, p { overflow-wrap: anywhere; }
 .header-inner { min-height: var(--header-height); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
 .brand { flex: none; color: var(--color-text); font-size: 1.55rem; font-weight: 850; letter-spacing: -0.05em; text-decoration: none; }
 .brand span { color: var(--color-primary); }
+.header-logo-link { display: inline-flex; align-items: center; min-width: 0; }
+.header-logo { display: block; width: auto; max-width: min(12rem, 34vw); height: auto; max-height: 3rem; object-fit: contain; }
 .header-panel { display: flex; align-items: center; gap: 1.6rem; }
 .main-nav { display: flex; align-items: center; gap: 1.5rem; }
 .main-nav a { color: var(--color-muted); font-size: 0.91rem; font-weight: 650; text-decoration: none; }
@@ -153,6 +155,7 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 
 @media (max-width: 35rem) {
     .container { width: min(calc(100% - 1.5rem), var(--container-width)); }
+    .header-logo { max-width: 9.5rem; max-height: 2.5rem; }
     .hero { padding: 4rem 0; }
     .hero-actions { align-items: flex-start; flex-direction: column; gap: 1rem; }
     .card-grid, .steps, .benefit-list { grid-template-columns: 1fr; }
