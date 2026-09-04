@@ -121,7 +121,7 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 .footer-main { display: flex; justify-content: space-between; gap: 2rem; padding-bottom: 2.5rem; }
 .footer-main p { margin: 0.6rem 0 0; color: var(--color-muted); }
 .footer-email { display: inline-block; margin-top: 0.4rem; color: var(--color-primary-dark); font-weight: 700; text-underline-offset: 0.25em; }
-.footer-main nav { display: flex; align-items: flex-start; gap: 1.5rem; }
+.footer-main nav { display: flex; align-items: flex-start; justify-content: flex-end; gap: 1.5rem; flex-wrap: wrap; }
 .footer-main nav a { color: var(--color-muted); text-underline-offset: 0.25em; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; padding: 1rem 0; color: var(--color-muted); border-top: 1px solid var(--color-border); font-size: 0.82rem; }
 .footer-bottom p { margin: 0; }
