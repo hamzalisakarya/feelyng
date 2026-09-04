@@ -141,7 +141,7 @@ gasForm?.addEventListener("submit", (event) => {
     const paymentLine = data.get("payment")
         ? (journeyLanguage() === "tr" ? `\nGüncel aylık ödeme: ${data.get("payment")} EUR/ay` : `\nAktueller Abschlag: ${data.get("payment")} EUR/Monat`)
         : "";
-    const subject = journeyLanguage() === "tr" ? "Doğal gaz tarifesi kontrolü – Feelyng" : "Gas Tarifprüfung – Feelyng";
+    const subject = journeyLanguage() === "tr" ? "Doğal gaz tarifesi kontrol talebi" : "Anfrage zur Gastarifprüfung";
     const body = journeyLanguage() === "tr"
         ? `Merhaba Feelyng,\n\ndoğal gaz tarifemi kontrol ettirmek istiyorum.\n\nE-posta: ${data.get("email")}\nPosta kodu: ${data.get("postalCode")}\nYıllık tüketim: ${gasConsumptionEstimated ? "yaklaşık " : ""}${localizedNumber(Number(data.get("consumption")))} kWh\nTüketim değeri: ${gasConsumptionEstimated ? "tahmini" : "kullanıcı tarafından girildi"}${paymentLine}\n\nBenimle iletişime geçebilir misiniz?`
         : `Hallo Feelyng,\n\nich möchte meinen Gastarif prüfen lassen.\n\nE-Mail: ${data.get("email")}\nPLZ: ${data.get("postalCode")}\nJahresverbrauch: ${gasConsumptionEstimated ? "ca. " : ""}${localizedNumber(Number(data.get("consumption")))} kWh\nVerbrauchswert: ${gasConsumptionEstimated ? "geschätzt" : "vom Kunden angegeben"}${paymentLine}\n\nBitte melden Sie sich bei mir.`;
@@ -219,10 +219,16 @@ document.querySelector("[data-edit-internet]")?.addEventListener("click", () => 
 document.querySelector("[data-send-internet]")?.addEventListener("click", () => {
     if (!internetData) return;
     const tr = journeyLanguage() === "tr";
-    const subject = tr ? "İnternet tarifesi kontrolü – Feelyng" : "Internet Tarifprüfung – Feelyng";
-    const body = tr
-        ? `Merhaba Feelyng,\n\ninternet tarifemi kontrol ettirmek istiyorum.\n\nE-posta: ${internetData.email}\nPosta kodu: ${internetData.postalCode}\nMevcut sağlayıcı: ${internetData.provider}\nŞu anki hız: ${internetLabel(internetData.currentSpeed)}\nBağlantı türü: ${internetLabel(internetData.connection)}\nKullanım sınırı: ${internetData.dataLimit === "yes" ? internetData.dataVolume + " GB/ay" : internetLabel(internetData.dataLimit)}\nGüncel fiyat: ${internetLabel(internetData.payment, "payment")}\nİstenen hız: ${internetLabel(internetData.desiredSpeed)}\n\nBenimle iletişime geçebilir misiniz?`
-        : `Hallo Feelyng,\n\nich möchte meinen Internettarif prüfen lassen.\n\nE-Mail: ${internetData.email}\nPLZ: ${internetData.postalCode}\nAktueller Anbieter: ${internetData.provider}\nAktuelle Geschwindigkeit: ${internetLabel(internetData.currentSpeed)}\nAnschlussart: ${internetLabel(internetData.connection)}\nDatenvolumen: ${internetData.dataLimit === "yes" ? internetData.dataVolume + " GB/Monat" : internetLabel(internetData.dataLimit)}\nAktueller Preis: ${internetLabel(internetData.payment, "payment")}\nGewünschte Geschwindigkeit: ${internetLabel(internetData.desiredSpeed)}\n\nBitte melden Sie sich bei mir.`;
+    const subject = tr ? "İnternet tarifesi kontrol talebi" : "Anfrage zur Internettarifprüfung";
+    const lines = tr
+        ? ["Merhaba Feelyng,", "", "internet tarifemi kontrol ettirmek istiyorum.", "", `E-posta: ${internetData.email}`, `Posta kodu: ${internetData.postalCode}`, `Mevcut sağlayıcı: ${internetData.provider}`, `Şu anki hız: ${internetLabel(internetData.currentSpeed)}`]
+        : ["Hallo Feelyng,", "", "ich möchte meinen Internettarif prüfen lassen.", "", `E-Mail: ${internetData.email}`, `PLZ: ${internetData.postalCode}`, `Aktueller Anbieter: ${internetData.provider}`, `Aktuelle Geschwindigkeit: ${internetLabel(internetData.currentSpeed)}`];
+    if (internetData.connection) lines.push(`${tr ? "Bağlantı türü" : "Anschlussart"}: ${internetLabel(internetData.connection)}`);
+    lines.push(`${tr ? "Kullanım sınırı" : "Datenvolumen"}: ${internetData.dataLimit === "yes" ? internetData.dataVolume + (tr ? " GB/ay" : " GB/Monat") : internetLabel(internetData.dataLimit)}`);
+    if (internetData.payment) lines.push(`${tr ? "Güncel aylık fiyat" : "Aktueller monatlicher Preis"}: ${internetLabel(internetData.payment, "payment")}`);
+    if (internetData.desiredSpeed) lines.push(`${tr ? "İstenen hız" : "Gewünschte Geschwindigkeit"}: ${internetLabel(internetData.desiredSpeed)}`);
+    lines.push("", tr ? "Benimle iletişime geçebilir misiniz?" : "Bitte melden Sie sich bei mir.");
+    const body = lines.join("\n");
     window.location.href = buildMailto(subject, body);
 });
 
