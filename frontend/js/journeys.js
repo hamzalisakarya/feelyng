@@ -18,6 +18,7 @@ function updateJourneyCopy(language = journeyLanguage()) {
     document.querySelectorAll("[data-de][data-tr]").forEach((element) => {
         element.textContent = element.dataset[language];
     });
+    updateKfzSupportLink();
     if (gasEstimate) renderGasEstimate();
     if (internetData && !document.querySelector("[data-summary-section]")?.hidden) renderInternetSummary(internetData);
     renderGasCost();
@@ -232,22 +233,16 @@ document.querySelector("[data-send-internet]")?.addEventListener("click", () => 
     window.location.href = buildMailto(subject, body);
 });
 
-const kfzSupportForm = document.querySelector("#kfz-support-form");
-
-kfzSupportForm?.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!kfzSupportForm.reportValidity()) return;
-
-    const email = new FormData(kfzSupportForm).get("email");
+function updateKfzSupportLink() {
+    const link = document.querySelector("[data-kfz-support]");
+    if (!link) return;
     const tr = journeyLanguage() === "tr";
-    const subject = tr
-        ? "Araç sigortası teknik destek talebi"
-        : "Anfrage zur technischen Unterstützung bei Kfz-Versicherung";
-    const body = tr
-        ? `Merhaba Feelyng,\n\naraç sigortası karşılaştırması için bağlantıya veya teknik desteğe ihtiyacım var.\n\nE-posta: ${email}\n\nBenimle iletişime geçebilir misiniz?`
-        : `Hallo Feelyng,\n\nich benötige einen Link bzw. technische Unterstützung bei einem Kfz-Versicherungsvergleich.\n\nE-Mail: ${email}\n\nBitte melden Sie sich bei mir.`;
-
-    window.location.href = buildMailto(subject, body);
-});
+    link.href = buildMailto(
+        tr ? "Araç sigortası karşılaştırması için teknik destek" : "Technische Unterstützung beim Kfz-Vergleich",
+        tr
+            ? "Merhaba Feelyng,\n\nharici araç sigortası karşılaştırmasının işleyişi hakkında genel veya teknik bir sorum var.\n\nSorum (lütfen hassas bilgiler veya belgeler eklemeyin):\n"
+            : "Hallo Feelyng,\n\nich habe eine allgemeine oder technische Frage zum Ablauf des externen Kfz-Versicherungsvergleichs.\n\nMeine Frage (bitte keine sensiblen Angaben oder Unterlagen ergänzen):\n"
+    );
+}
 
 updateJourneyCopy();
