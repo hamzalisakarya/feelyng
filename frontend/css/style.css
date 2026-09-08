@@ -273,7 +273,43 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 @media (max-width: 64rem) { .kfz-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 35rem) { .kfz-steps { grid-template-columns: minmax(0, 1fr); } }
 
-.kfz-banner { width: 300px; max-width: 100%; margin: 1.5rem 0; }
+.kfz-banner { width: 334px; max-width: 100%; margin: 2rem 0 0; padding: 1rem; background: var(--color-soft); border: 1px solid var(--color-border); border-radius: var(--radius-medium); }
 .kfz-banner a, .kfz-banner img { display: block; }
+.kfz-banner a { width: 300px; max-width: 100%; }
+.kfz-banner figcaption { margin-bottom: 1rem; }
+.kfz-banner figcaption span, .kfz-banner figcaption strong { display: block; }
 .kfz-banner .field-help { margin-bottom: 0.5rem; }
 .estimator-toggle:focus-visible { outline: 3px solid #a9d74d; outline-offset: 3px; }
+
+/* Scope hero refinements to Kfz; energy and Internet retain their existing layout. */
+.kfz-page .strom-hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr); gap: clamp(2rem, 5vw, 4.5rem); }
+.kfz-page .strom-hero-grid > * { min-width: 0; }
+.kfz-page .decision-box { height: auto; overflow: visible; }
+.kfz-page .decision-box h2 { margin: 0 0 1rem; font-size: clamp(1.5rem, 2.5vw, 2rem); line-height: 1.25; }
+.kfz-page .decision-box p { margin: 0; hyphens: auto; }
+.kfz-page #external-note { margin-top: 1rem; max-width: 60ch; }
+.kfz-page .kfz-disclosure { max-width: 64ch; }
+@media (max-width: 64rem) { .kfz-page .strom-hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Static bilingual guide pages. */
+.guide-article { max-width: 52rem; padding-block: clamp(2rem, 5vw, 4rem); }
+.guide-breadcrumb { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--color-muted); }
+.guide-page h1 { margin: 0 0 1.5rem; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.15; letter-spacing: -0.035em; hyphens: auto; }
+.guide-heading .hero-lead { font-size: 1.15rem; }
+.guide-section { margin-block: 2.5rem; }
+.guide-section h2, .guide-callout h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); line-height: 1.3; margin-bottom: 1rem; }
+.guide-section h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+.guide-toc, .guide-callout { padding: clamp(1.2rem, 3vw, 2rem); margin-block: 2rem; background: var(--color-soft); border-radius: var(--radius-medium); }
+.guide-toc h2 { margin-top: 0; font-size: 1.2rem; }
+.guide-toc ol { margin-bottom: 0; padding-left: 1.3rem; }
+.guide-toc li { padding-block: 0.3rem; }
+.guide-callout h2 { margin-top: 0; }
+.guide-callout .button { max-width: 100%; white-space: normal; text-align: center; }
+.guide-source { font-size: 0.88rem; color: var(--color-muted); }
+.guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+.guide-card { min-width: 0; padding: clamp(1.25rem, 3vw, 2rem); background: white; border: 1px solid var(--color-border); border-radius: var(--radius-medium); }
+.guide-card h3 { margin: 0 0 1rem; font-size: 1.25rem; line-height: 1.35; hyphens: auto; }
+.guide-card h3 a { text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+.guide-card h3 a:hover { color: var(--color-primary); }
+.guide-card p { margin-bottom: 0; color: var(--color-muted); }
+@media (max-width: 40rem) { .guide-grid { grid-template-columns: minmax(0, 1fr); } }
