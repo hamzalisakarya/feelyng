@@ -35,7 +35,7 @@
                 <div>
                     <p class="eyebrow" data-i18n="electricityEyebrow">Strom</p>
                     <h1 data-i18n="electricityHeading">Stromtarif prüfen</h1>
-                    <p class="hero-lead" data-i18n="electricityIntro">Für eine erste Tarifprüfung benötigen wir nur Ihre Postleitzahl und Ihren Jahresverbrauch.</p>
+                    <p class="hero-lead" data-i18n="electricityIntro">Für eine erste Tarifprüfung benötigen wir Ihre Postleitzahl, Ihren Jahresverbrauch und Ihre E-Mail-Adresse.</p>
                     <p class="hero-copy" data-i18n="electricityEstimatorIntro">Sie kennen Ihren Jahresverbrauch nicht? Kein Problem – mit unserem Verbrauchsrechner können Sie einen ungefähren Wert ermitteln.</p>
                     <div class="inline-trust"><span aria-hidden="true">✓</span><span data-i18n="initialTrustNote">Für die erste Tarifprüfung benötigen wir keine IBAN und kein Geburtsdatum.</span></div>
                 </div>
@@ -47,14 +47,14 @@
                         <p class="field-error" id="postal-code-error" data-i18n="postalCodeError">Bitte geben Sie eine gültige deutsche Postleitzahl mit 5 Ziffern ein.</p>
                     </div>
                     <div class="field">
-                        <label for="annual-consumption" data-i18n="consumptionLabel">Jahresverbrauch</label>
-                        <div class="input-unit"><input id="annual-consumption" name="annualConsumption" type="number" inputmode="numeric" min="100" max="100000" step="50" placeholder="z. B. 3000" required aria-describedby="consumption-status consumption-error"><span data-i18n="consumptionUnit">kWh/Jahr</span></div>
+                        <label for="annual-consumption" data-i18n="consumptionLabel">Jahresverbrauch</label><p class="field-help" data-de="Jahresverbrauch bekannt? Geben Sie den kWh-Wert direkt ein. Nicht bekannt? Nutzen Sie optional die Verbrauchsschätzung." data-tr="Yıllık tüketiminizi biliyor musunuz? kWh değerini doğrudan girin. Bilmiyorsanız isteğe bağlı tüketim tahminini kullanabilirsiniz.">Jahresverbrauch bekannt? Geben Sie den kWh-Wert direkt ein. Nicht bekannt? Nutzen Sie optional die Verbrauchsschätzung.</p>
+                        <div class="input-unit"><input id="annual-consumption" name="annualConsumption" type="number" inputmode="numeric" min="100" max="100000" step="1" placeholder="z. B. 3000" required aria-describedby="consumption-status consumption-error"><span data-i18n="consumptionUnit">kWh/Jahr</span></div>
                         <p class="estimated-badge" id="consumption-status" hidden data-i18n="estimatedBadge">geschätzt</p>
                         <p class="field-error" id="consumption-error" data-i18n="consumptionError">Bitte geben Sie einen plausiblen Jahresverbrauch ein.</p>
                     </div>
-                    <div class="field"><label for="current-payment" data-de="Aktueller monatlicher Abschlag" data-tr="Güncel aylık ödeme">Aktueller monatlicher Abschlag</label><div class="input-unit"><input id="current-payment" name="currentPayment" type="number" inputmode="decimal" min="0" step="0.01" placeholder="z. B. 145"><span data-de="EUR / Monat" data-tr="EUR / ay">EUR / Monat</span></div></div>
-                    <div class="field"><label for="customer-email" data-de="E-Mail-Adresse" data-tr="E-posta adresi">E-Mail-Adresse</label><input id="customer-email" name="customerEmail" type="email" autocomplete="email" required><p class="field-help" data-de="An diese Adresse können wir Ihnen nach der Tarifprüfung antworten." data-tr="Tarife kontrolünden sonra size bu e-posta adresi üzerinden dönüş yapabiliriz.">An diese Adresse können wir Ihnen nach der Tarifprüfung antworten.</p></div>
                     <button class="estimator-toggle" type="button" aria-expanded="false" aria-controls="estimator" data-estimator-toggle data-i18n="estimateToggle">Verbrauch nicht bekannt? Jetzt schätzen</button>
+                    <div class="field"><label for="current-payment" data-de="Aktueller monatlicher Abschlag (optional, empfohlen)" data-tr="Güncel aylık ödeme (isteğe bağlı, önerilir)">Aktueller monatlicher Abschlag (optional, empfohlen)</label><div class="input-unit"><input id="current-payment" name="currentPayment" type="number" inputmode="decimal" min="0" step="0.01" placeholder="z. B. 145"><span data-de="EUR / Monat" data-tr="EUR / ay">EUR / Monat</span></div></div>
+                    <div class="field"><label for="customer-email" data-de="E-Mail-Adresse" data-tr="E-posta adresi">E-Mail-Adresse</label><input id="customer-email" name="customerEmail" type="email" autocomplete="email" required><p class="field-help" data-de="An diese Adresse können wir Ihnen nach der Tarifprüfung antworten." data-tr="Tarife kontrolünden sonra size bu e-posta adresi üzerinden dönüş yapabiliriz.">An diese Adresse können wir Ihnen nach der Tarifprüfung antworten.</p></div>
                     <button class="button button-primary form-submit" type="submit" data-i18n="requestTariff">Tarifprüfung anfragen</button>
                     <p class="mailto-note" data-de="Beim Klick auf die Schaltfläche öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht." data-tr="Butona bastığınızda e-posta uygulamanız, bilgilerinizin yer aldığı hazırlanmış bir mesajla açılır.">Beim Klick auf die Schaltfläche öffnet sich Ihr E-Mail-Programm mit einer vorbereiteten Nachricht.</p>
                 </form>

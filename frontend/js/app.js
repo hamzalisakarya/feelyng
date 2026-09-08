@@ -60,7 +60,7 @@ const translations = {
         footerLocation: "Für Kundinnen und Kunden in Deutschland",
         electricityPageTitle: "Stromtarif prüfen – Feelyng", nextStepsNav: "So geht es weiter", privacyNav: "Datenschutz",
         electricityEyebrow: "Strom", electricityHeading: "Stromtarif prüfen",
-        electricityIntro: "Für eine erste Tarifprüfung benötigen wir nur Ihre Postleitzahl und Ihren Jahresverbrauch.",
+        electricityIntro: "Für eine erste Tarifprüfung benötigen wir Ihre Postleitzahl, Ihren Jahresverbrauch und Ihre E-Mail-Adresse.",
         electricityEstimatorIntro: "Sie kennen Ihren Jahresverbrauch nicht? Kein Problem – mit unserem Verbrauchsrechner können Sie einen ungefähren Wert ermitteln.",
         initialTrustNote: "Für die erste Tarifprüfung benötigen wir keine IBAN und kein Geburtsdatum.",
         initialDetailsTitle: "Ihre Angaben", postalCodeLabel: "Postleitzahl", postalCodeError: "Bitte geben Sie eine gültige deutsche Postleitzahl mit 5 Ziffern ein.",
@@ -142,7 +142,7 @@ const translations = {
         footerLocation: "Almanya’daki müşteriler için",
         electricityPageTitle: "Elektrik tarifeni kontrol et – Feelyng", nextStepsNav: "Sonraki adımlar", privacyNav: "Gizlilik",
         electricityEyebrow: "Elektrik", electricityHeading: "Elektrik tarifeni kontrol et",
-        electricityIntro: "İlk tarife kontrolü için yalnızca posta kodunuz ve yıllık elektrik tüketiminiz yeterlidir.",
+        electricityIntro: "İlk tarife kontrolü için posta kodunuz, yıllık elektrik tüketiminiz ve e-posta adresiniz yeterlidir.",
         electricityEstimatorIntro: "Yıllık tüketiminizi bilmiyor musunuz? Sorun değil – tüketim hesaplayıcımızla yaklaşık bir değer bulabilirsiniz.",
         initialTrustNote: "İlk tarife kontrolü için IBAN veya doğum tarihi gerekmiyor.",
         initialDetailsTitle: "Bilgileriniz", postalCodeLabel: "Posta kodu", postalCodeError: "Lütfen 5 rakamlı geçerli bir Alman posta kodu girin.",
@@ -384,7 +384,9 @@ tariffForm?.addEventListener("submit", (event) => {
         return;
     }
 
-    const formattedConsumption = formatConsumption(roundConsumption(consumption));
+    if (!tariffForm.reportValidity()) return;
+
+    const formattedConsumption = formatConsumption(consumption);
     const currentPayment = document.querySelector("#current-payment")?.value;
     const subject = currentLanguage === "tr"
         ? "Elektrik tarifesi kontrol talebi"

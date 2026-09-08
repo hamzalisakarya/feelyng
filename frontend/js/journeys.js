@@ -100,6 +100,8 @@ document.querySelector("[data-gas-apply]")?.addEventListener("click", () => {
     gasConsumptionEstimated = true;
     document.querySelector("[data-gas-estimated]").hidden = false;
     gasEstimator.hidden = true;
+    document.querySelector("[data-gas-toggle]").setAttribute("aria-expanded", "false");
+    gasConsumption.focus({ preventScroll: true });
     gasForm.scrollIntoView({ behavior: "smooth", block: "center" });
     renderGasCost();
 });
@@ -157,7 +159,7 @@ document.querySelectorAll('input[name="dataLimit"]').forEach((input) => {
     input.addEventListener("change", () => {
         const show = input.checked && input.value === "yes";
         dataVolumeField.hidden = !show;
-        document.querySelector("#data-volume").required = show;
+        document.querySelector("#data-volume").disabled = !show;
     });
 });
 
@@ -179,15 +181,15 @@ function renderInternetSummary(data) {
     const rows = [
         [tr ? "E-posta adresi" : "E-Mail-Adresse", data.email],
         [tr ? "Posta kodu" : "PLZ", data.postalCode],
-        [tr ? "Mevcut sağlayıcı" : "Aktueller Anbieter", data.provider],
+        [tr ? "Mevcut sağlayıcı" : "Aktueller Anbieter", internetLabel(data.provider)],
         [tr ? "Şu anki hız" : "Aktuelle Geschwindigkeit", internetLabel(data.currentSpeed)],
         [tr ? "Bağlantı" : "Anschluss", internetLabel(data.connection)],
-        [tr ? "Kullanım sınırı" : "Datenvolumen", data.dataLimit === "yes" ? `${data.dataVolume} GB/Monat` : internetLabel(data.dataLimit)],
+        [tr ? "Kullanım sınırı" : "Datenvolumen", data.dataLimit === "yes" ? (data.dataVolume ? `${data.dataVolume} GB/${tr ? "ay" : "Monat"}` : (tr ? "Var" : "Ja")) : internetLabel(data.dataLimit)],
         [tr ? "Güncel fiyat" : "Aktueller Preis", internetLabel(data.payment, "payment")],
         [tr ? "İstenen hız" : "Gewünschte Geschwindigkeit", internetLabel(data.desiredSpeed)]
     ];
     const list = document.querySelector("[data-internet-summary-list]");
-    list.replaceChildren(...rows.flatMap(([term, value]) => {
+    list.replaceChildren(...rows.filter(([, value]) => value !== "–").flatMap(([term, value]) => {
         const dt = document.createElement("dt");
         const dd = document.createElement("dd");
         dt.textContent = term;
@@ -222,10 +224,12 @@ document.querySelector("[data-send-internet]")?.addEventListener("click", () => 
     const tr = journeyLanguage() === "tr";
     const subject = tr ? "İnternet tarifesi kontrol talebi" : "Anfrage zur Internettarifprüfung";
     const lines = tr
-        ? ["Merhaba Feelyng,", "", "internet tarifemi kontrol ettirmek istiyorum.", "", `E-posta: ${internetData.email}`, `Posta kodu: ${internetData.postalCode}`, `Mevcut sağlayıcı: ${internetData.provider}`, `Şu anki hız: ${internetLabel(internetData.currentSpeed)}`]
-        : ["Hallo Feelyng,", "", "ich möchte meinen Internettarif prüfen lassen.", "", `E-Mail: ${internetData.email}`, `PLZ: ${internetData.postalCode}`, `Aktueller Anbieter: ${internetData.provider}`, `Aktuelle Geschwindigkeit: ${internetLabel(internetData.currentSpeed)}`];
+        ? ["Merhaba Feelyng,", "", "internet tarifemi kontrol ettirmek istiyorum.", "", `E-posta: ${internetData.email}`, `Posta kodu: ${internetData.postalCode}`]
+        : ["Hallo Feelyng,", "", "ich möchte meinen Internettarif prüfen lassen.", "", `E-Mail: ${internetData.email}`, `PLZ: ${internetData.postalCode}`];
+    if (internetData.provider) lines.push(`${tr ? "Mevcut sağlayıcı" : "Aktueller Anbieter"}: ${internetData.provider}`);
+    if (internetData.currentSpeed) lines.push(`${tr ? "Şu anki hız" : "Aktuelle Geschwindigkeit"}: ${internetLabel(internetData.currentSpeed)}`);
     if (internetData.connection) lines.push(`${tr ? "Bağlantı türü" : "Anschlussart"}: ${internetLabel(internetData.connection)}`);
-    lines.push(`${tr ? "Kullanım sınırı" : "Datenvolumen"}: ${internetData.dataLimit === "yes" ? internetData.dataVolume + (tr ? " GB/ay" : " GB/Monat") : internetLabel(internetData.dataLimit)}`);
+    if (internetData.dataLimit) lines.push(`${tr ? "Kullanım sınırı" : "Datenvolumen"}: ${internetData.dataLimit === "yes" ? (internetData.dataVolume ? internetData.dataVolume + (tr ? " GB/ay" : " GB/Monat") : (tr ? "Var" : "Ja")) : internetLabel(internetData.dataLimit)}`);
     if (internetData.payment) lines.push(`${tr ? "Güncel aylık fiyat" : "Aktueller monatlicher Preis"}: ${internetLabel(internetData.payment, "payment")}`);
     if (internetData.desiredSpeed) lines.push(`${tr ? "İstenen hız" : "Gewünschte Geschwindigkeit"}: ${internetLabel(internetData.desiredSpeed)}`);
     lines.push("", tr ? "Benimle iletişime geçebilir misiniz?" : "Bitte melden Sie sich bei mir.");
