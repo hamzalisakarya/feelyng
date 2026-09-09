@@ -1,6 +1,6 @@
 const translations = {
     de: {
-        pageTitle: "Feelyng – Strom, Gas & Internet",
+        pageTitle: "Feelyng – Strom, Gas, Internet & Kfz",
         skipLink: "Zum Inhalt springen",
         menuLabel: "Menü öffnen",
         mainNavigation: "Hauptnavigation",
@@ -10,6 +10,8 @@ const translations = {
         navProcess: "So funktioniert’s",
         navAbout: "Warum Feelyng",
         navTransparency: "Hinweise",
+        navGuide: "Ratgeber",
+        navAboutPage: "Über Feelyng",
         contactShort: "Kontakt",
         heroEyebrow: "Orientierung, die sich einfach anfühlt",
         headline: "Strom, Gas, Internet und Kfz einfach erledigen.",
@@ -49,7 +51,7 @@ const translations = {
         benefitOne: "Deutsch & Türkisch",
         benefitTwo: "Persönliche Unterstützung",
         benefitThree: "Einfache Kommunikation",
-        benefitFour: "Strom, Gas und Internet an einem Ort",
+        benefitFour: "Strom, Gas, Internet und Kfz an einem Ort",
         transparencyEyebrow: "Transparent erklärt",
         transparencyTitle: "Du behältst die Entscheidung",
         transparencyText: "Feelyng ist kein Energie- oder Internetanbieter. Ein Vertrag kommt – sofern du dich dafür entscheidest – direkt mit dem jeweiligen Anbieter oder Partner zustande. Für erfolgreiche Vermittlungen kann Feelyng eine Vergütung erhalten; für dich steht die freie Entscheidung im Mittelpunkt.",
@@ -83,7 +85,7 @@ const translations = {
         privacyLink: "Zur Datenschutzerklärung"
     },
     tr: {
-        pageTitle: "Feelyng – Elektrik, Doğal Gaz ve İnternet",
+        pageTitle: "Feelyng – Elektrik, Doğal Gaz, İnternet ve Kfz",
         skipLink: "İçeriğe geç",
         menuLabel: "Menüyü aç",
         mainNavigation: "Ana menü",
@@ -93,6 +95,8 @@ const translations = {
         navProcess: "Nasıl çalışır?",
         navAbout: "Neden Feelyng",
         navTransparency: "Açıklamalar",
+        navGuide: "Rehber",
+        navAboutPage: "Hakkımızda",
         contactShort: "İletişim",
         heroEyebrow: "Süreci kolaylaştıran destek",
         headline: "Elektrik, doğal gaz, internet ve Kfz işlemlerinizi kolayca halledin.",
@@ -132,7 +136,7 @@ const translations = {
         benefitOne: "Almanca & Türkçe",
         benefitTwo: "Kişisel destek",
         benefitThree: "Kolay iletişim",
-        benefitFour: "Elektrik, doğal gaz ve internet tek yerde",
+        benefitFour: "Elektrik, doğal gaz, internet ve Kfz tek yerde",
         transparencyEyebrow: "Şeffaf açıklama",
         transparencyTitle: "Karar her zaman sizin",
         transparencyText: "Feelyng bir enerji veya internet sağlayıcısı değildir. Tercih etmeniz halinde sözleşme doğrudan ilgili sağlayıcı veya iş ortağıyla yapılır. Başarılı yönlendirmeler için Feelyng ücret alabilir; seçim özgürlüğü her zaman size aittir.",
