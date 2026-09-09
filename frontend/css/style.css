@@ -301,6 +301,7 @@ h1 { max-width: 49rem; margin: 0; font-size: clamp(3rem, 6.5vw, 5.65rem); line-h
 .guide-breadcrumb { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; font-size: 0.9rem; color: var(--color-muted); }
 .guide-page h1 { margin: 0 0 1.5rem; font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.15; letter-spacing: -0.035em; hyphens: auto; }
 .guide-heading .hero-lead { font-size: 1.15rem; }
+.guide-editorial { margin-top: 1rem; color: var(--color-muted); font-size: 0.86rem; }
 .guide-section { margin-block: 2.5rem; }
 .guide-section h2, .guide-callout h2 { font-size: clamp(1.4rem, 3vw, 1.85rem); line-height: 1.3; margin-bottom: 1rem; }
 .guide-section h3 { font-size: 1.15rem; margin-top: 1.5rem; }
