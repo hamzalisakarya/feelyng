@@ -68,17 +68,18 @@ const translations = {
         estimateToggle: "Verbrauch nicht bekannt? Jetzt schätzen", requestTariff: "Tarifprüfung anfragen",
         estimatorEyebrow: "Verbrauchsrechner", estimatorTitle: "Jahresverbrauch ungefähr schätzen", estimatorLead: "Beantworten Sie einige kurze Fragen. Das Ergebnis dient als Orientierung für die Tarifprüfung.",
         householdQuestion: "Wie viele Personen leben im Haushalt?", buildingQuestion: "Wie wohnen Sie?", apartmentOption: "Wohnung / Mehrfamilienhaus", houseOption: "Einfamilienhaus / Reihenhaus",
-        bathroomQuestion: "Wird das Warmwasser im Badezimmer elektrisch erzeugt?", bathroomHelp: "Zum Beispiel mit Durchlauferhitzer oder Elektroboiler.",
-        kitchenQuestion: "Wird das Warmwasser in der Küche elektrisch erzeugt?", cookingQuestion: "Wird überwiegend elektrisch gekocht?", cookingHelp: "Elektroherd oder Induktionskochfeld",
-        dryerQuestion: "Ist ein Wäschetrockner vorhanden und wird er regelmäßig genutzt?", heatingQuestion: "Wird die Wohnung mit Strom beheizt?", yes: "Ja", no: "Nein",
-        estimatorRequired: "Bitte beantworten Sie alle Fragen.", calculateEstimate: "Verbrauch schätzen", estimateResultLabel: "Geschätzter Jahresverbrauch",
+        householdFeatures: "Was trifft auf Ihren Haushalt zu?",
+        householdFeaturesHelp: "Optional: Wählen Sie nur aus, was zutrifft. Sie können auch ohne Auswahl schätzen.",
+        bathroomQuestion: "Warmwasser im Bad wird elektrisch erzeugt",
+        kitchenQuestion: "Warmwasser in der Küche wird elektrisch erzeugt", cookingQuestion: "Es wird elektrisch gekocht",
+        dryerQuestion: "Ein Wäschetrockner wird genutzt",
+        estimatorRequired: "Bitte wählen Sie Haushaltsgröße und Wohnform aus.", calculateEstimate: "Verbrauch schätzen", estimateResultLabel: "Geschätzter Jahresverbrauch",
         estimateDisclaimer: "Dies ist eine unverbindliche Schätzung. Den zuverlässigsten Wert finden Sie auf Ihrer letzten Jahresabrechnung.", applyEstimate: "Schätzwert übernehmen",
-        heatingWarningTitle: "Keine pauschale Schätzung möglich", heatingWarning: "Bei elektrischer Raumheizung kann der Stromverbrauch stark von Wohnfläche, Dämmung und Heizsystem abhängen. Bitte verwenden Sie nach Möglichkeit den Jahresverbrauch aus Ihrer letzten Stromabrechnung.",
         nextEyebrow: "Transparent und einfach", nextHeading: "So geht es weiter", nextOneTitle: "Angaben senden", nextOneText: "Für die erste Prüfung senden Sie nur die grundlegenden Tarifangaben.",
         nextTwoTitle: "Feelyng prüft die Möglichkeiten", nextTwoText: "Wir prüfen verfügbare Tarifmöglichkeiten.", nextThreeTitle: "Wir melden uns mit möglichen Optionen", nextThreeText: "Sie erhalten eine Rückmeldung an Ihre E-Mail-Adresse.",
-        nextFourTitle: "Sie entscheiden, ob Sie weitermachen möchten", nextFourText: "Weitere Vertragsdaten werden erst benötigt, wenn Sie sich für das Fortfahren entscheiden.",
+        nextFourTitle: "Sie entscheiden, ob Sie weitermachen möchten", nextFourText: "Zusätzliche Vertragsdaten werden erst angefordert, wenn Sie fortfahren möchten und diese für den konkreten Vorgang erforderlich sind.",
         partnerProcess: "Je nach Anbieter und Partnerprozess können Sie den Abschluss selbst durchführen oder Unterstützung beim weiteren Ablauf erhalten.",
-        privacyEyebrow: "Ihre Daten", privacyHeading: "Erst prüfen, dann Daten", privacyText: "Für die erste Tarifprüfung benötigen wir keine IBAN und kein Geburtsdatum. Weitere Angaben werden erst benötigt, wenn Sie sich für einen Vertragsabschluss entscheiden.",
+        privacyEyebrow: "Ihre Daten", privacyHeading: "Erst prüfen, dann Daten", privacyText: "Für die erste Tarifprüfung benötigen wir keine IBAN und kein Geburtsdatum. Weitere Angaben werden erst benötigt, wenn Sie sich für einen Vertragsabschluss entscheiden und diese für den jeweiligen Vorgang erforderlich sind.",
         privacyLink: "Zur Datenschutzerklärung"
     },
     tr: {
@@ -150,17 +151,18 @@ const translations = {
         estimateToggle: "Tüketimini bilmiyor musun? Şimdi tahmin et", requestTariff: "Tarife kontrolü iste",
         estimatorEyebrow: "Tüketim hesaplayıcı", estimatorTitle: "Yıllık tüketimini yaklaşık hesapla", estimatorLead: "Birkaç kısa soruyu yanıtlayın. Sonuç, tarife kontrolü için yaklaşık bir değerdir.",
         householdQuestion: "Evde kaç kişi yaşıyor?", buildingQuestion: "Nasıl bir evde yaşıyorsunuz?", apartmentOption: "Apartman dairesi", houseOption: "Müstakil / sıra ev",
-        bathroomQuestion: "Banyodaki sıcak su elektrikle mi ısınıyor?", bathroomHelp: "Örneğin Durchlauferhitzer veya elektrikli boiler ile.",
-        kitchenQuestion: "Mutfaktaki sıcak su elektrikle mi ısınıyor?", cookingQuestion: "Ocak ağırlıklı olarak elektrikli mi?", cookingHelp: "Elektrikli veya indüksiyonlu ocak",
-        dryerQuestion: "Kurutma makinesi var mı ve düzenli kullanılıyor mu?", heatingQuestion: "Ev elektrikle mi ısınıyor?", yes: "Evet", no: "Hayır",
-        estimatorRequired: "Lütfen tüm soruları yanıtlayın.", calculateEstimate: "Tüketimi tahmin et", estimateResultLabel: "Tahmini yıllık tüketim",
+        householdFeatures: "Evinizde hangileri var?",
+        householdFeaturesHelp: "İsteğe bağlı: Yalnızca evinizde olanları işaretleyin. Hiçbirini seçmeden de tahmin yapabilirsiniz.",
+        bathroomQuestion: "Banyoda sıcak su elektrikle hazırlanıyor",
+        kitchenQuestion: "Mutfakta sıcak su elektrikle hazırlanıyor", cookingQuestion: "Elektrikli ocak kullanılıyor",
+        dryerQuestion: "Kurutma makinesi kullanılıyor",
+        estimatorRequired: "Lütfen kişi sayısını ve konut türünü seçin.", calculateEstimate: "Tüketimi tahmin et", estimateResultLabel: "Tahmini yıllık tüketim",
         estimateDisclaimer: "Bu yaklaşık bir tahmindir. En güvenilir tüketim değerini son yıllık elektrik faturanızda bulabilirsiniz.", applyEstimate: "Tahmini değeri kullan",
-        heatingWarningTitle: "Standart tahmin yapılamıyor", heatingWarning: "Elektrikli ev ısıtmasında tüketim; evin büyüklüğüne, yalıtımına ve ısıtma sistemine göre çok değişebilir. Mümkünse son elektrik faturanızdaki yıllık tüketim değerini kullanın.",
         nextEyebrow: "Şeffaf ve kolay", nextHeading: "Sonrasında ne oluyor?", nextOneTitle: "Bilgileri gönder", nextOneText: "İlk kontrol için yalnızca temel tarife bilgilerini gönderirsiniz.",
         nextTwoTitle: "Feelyng seçenekleri kontrol eder", nextTwoText: "Mevcut tarife seçeneklerini kontrol ederiz.", nextThreeTitle: "Size uygun seçeneklerle geri dönüş yaparız", nextThreeText: "E-posta adresinize geri dönüş yaparız.",
-        nextFourTitle: "Devam edip etmeyeceğinize siz karar verirsiniz", nextFourText: "Diğer sözleşme bilgileri ancak devam etmeye karar verdiğinizde istenir.",
+        nextFourTitle: "Devam edip etmeyeceğinize siz karar verirsiniz", nextFourText: "Ek sözleşme bilgileri ancak devam etmek istediğinizde ve ilgili işlem için gerekli olduğunda istenir.",
         partnerProcess: "Sağlayıcı ve partner sürecine göre sözleşmeyi kendiniz tamamlayabilir veya sonraki adımlarda destek alabilirsiniz.",
-        privacyEyebrow: "Bilgileriniz", privacyHeading: "Önce tarife kontrolü, sonra gerekli bilgiler", privacyText: "İlk tarife kontrolü için IBAN veya doğum tarihinize ihtiyacımız yok. Diğer bilgiler ancak bir sözleşmeyle devam etmeye karar verdiğinizde gerekli olur.",
+        privacyEyebrow: "Bilgileriniz", privacyHeading: "Önce tarife kontrolü, sonra gerekli bilgiler", privacyText: "İlk tarife kontrolü için IBAN veya doğum tarihinize ihtiyacımız yok. Diğer bilgiler ancak bir sözleşmeyle devam etmeye karar verdiğinizde ve ilgili işlem için gerçekten gerekli olduğunda istenir.",
         privacyLink: "Gizlilik bildirimine git"
     }
 };
@@ -328,17 +330,6 @@ estimatorForm?.addEventListener("submit", (event) => {
     error.classList.remove("is-visible");
     const formData = new FormData(estimatorForm);
     const result = document.querySelector("[data-estimate-result]");
-    const heatingWarning = document.querySelector("[data-heating-warning]");
-
-    if (formData.get("electricHeating") === "yes") {
-        latestEstimate = null;
-        result.hidden = true;
-        heatingWarning.hidden = false;
-        heatingWarning.scrollIntoView({ behavior: "smooth", block: "center" });
-        return;
-    }
-
-    heatingWarning.hidden = true;
     latestEstimate = calculateEstimatedConsumption(formData);
     renderConsumptionEstimate(latestEstimate);
     result.hidden = false;
